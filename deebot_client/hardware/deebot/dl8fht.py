@@ -161,6 +161,8 @@ DEVICES[short_name(__name__)] = StaticDeviceInfo(
         #     rooms=CapabilityEvent(RoomsEvent, [GetCachedMapInfo()]),
         #     trace=CapabilityEvent(MapTraceEvent, [GetMapTrace()]),
         # ),
+        network=(),
+        play_sound=(),
         # network=CapabilityEvent(NetworkInfoEvent, [GetNetInfo()]),
         # play_sound=CapabilityExecute(PlaySound),
         settings=CapabilitySettings(
