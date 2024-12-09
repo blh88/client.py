@@ -84,7 +84,7 @@ from deebot_client.events import (
     StatsEvent,
     TotalStatsEvent,
     TrueDetectEvent,
-    VolumeEvent,
+    # VolumeEvent,
     # WaterAmount,
     # WaterInfoEvent,
     WorkMode,
@@ -175,7 +175,7 @@ DEVICES[short_name(__name__)] = StaticDeviceInfo(
             true_detect=CapabilitySetEnable(
                 TrueDetectEvent, [GetTrueDetect()], SetTrueDetect
             ),
-            volume=CapabilitySet(VolumeEvent, [GetVolume()], SetVolume),
+            # volume=CapabilitySet(VolumeEvent, [GetVolume()], SetVolume),
         ),
         state=CapabilityEvent(StateEvent, [GetChargeState(), GetCleanInfo()]),
         stats=CapabilityStats(
