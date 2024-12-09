@@ -18,7 +18,7 @@ from deebot_client.capabilities import (
     CapabilityStats,
     DeviceType,
 )
-from deebot_client.commands.json.advanced_mode import GetAdvancedMode, SetAdvancedMode
+# from deebot_client.commands.json.advanced_mode import GetAdvancedMode, SetAdvancedMode
 from deebot_client.commands.json.battery import GetBattery
 from deebot_client.commands.json.carpet import (
     GetCarpetAutoFanBoost,
@@ -41,26 +41,26 @@ from deebot_client.commands.json.custom import CustomCommand
 from deebot_client.commands.json.error import GetError
 from deebot_client.commands.json.fan_speed import GetFanSpeed, SetFanSpeed
 from deebot_client.commands.json.life_span import GetLifeSpan, ResetLifeSpan
-from deebot_client.commands.json.map import GetCachedMapInfo, GetMajorMap, GetMapTrace
-from deebot_client.commands.json.multimap_state import (
-    GetMultimapState,
-    SetMultimapState,
-)
-from deebot_client.commands.json.network import GetNetInfo
+# from deebot_client.commands.json.map import GetCachedMapInfo, GetMajorMap, GetMapTrace
+# from deebot_client.commands.json.multimap_state import (
+#     GetMultimapState,
+#     SetMultimapState,
+# )
+# from deebot_client.commands.json.network import GetNetInfo
 from deebot_client.commands.json.play_sound import PlaySound
-from deebot_client.commands.json.pos import GetPos
+# from deebot_client.commands.json.pos import GetPos
 from deebot_client.commands.json.relocation import SetRelocationState
 from deebot_client.commands.json.stats import GetStats, GetTotalStats
 from deebot_client.commands.json.true_detect import GetTrueDetect, SetTrueDetect
-from deebot_client.commands.json.volume import GetVolume, SetVolume
-from deebot_client.commands.json.water_info import GetWaterInfo, SetWaterInfo
+# from deebot_client.commands.json.volume import GetVolume, SetVolume
+# from deebot_client.commands.json.water_info import GetWaterInfo, SetWaterInfo
 from deebot_client.commands.json.work_mode import GetWorkMode, SetWorkMode
 from deebot_client.const import DataType
 from deebot_client.events import (
-    AdvancedModeEvent,
+    # AdvancedModeEvent,
     AvailabilityEvent,
     BatteryEvent,
-    CachedMapInfoEvent,
+    # CachedMapInfoEvent,
     CarpetAutoFanBoostEvent,
     CleanCountEvent,
     CleanLogEvent,
@@ -72,21 +72,21 @@ from deebot_client.events import (
     FanSpeedLevel,
     LifeSpan,
     LifeSpanEvent,
-    MajorMapEvent,
-    MapChangedEvent,
-    MapTraceEvent,
-    MultimapStateEvent,
-    NetworkInfoEvent,
-    PositionsEvent,
+    # MajorMapEvent,
+    # MapChangedEvent,
+    # MapTraceEvent,
+    # MultimapStateEvent,
+    # NetworkInfoEvent,
+    # PositionsEvent,
     ReportStatsEvent,
-    RoomsEvent,
+    # RoomsEvent,
     StateEvent,
     StatsEvent,
     TotalStatsEvent,
     TrueDetectEvent,
     VolumeEvent,
-    WaterAmount,
-    WaterInfoEvent,
+    # WaterAmount,
+    # WaterInfoEvent,
     WorkMode,
     WorkModeEvent,
 )
@@ -149,24 +149,24 @@ DEVICES[short_name(__name__)] = StaticDeviceInfo(
             get=[GetLifeSpan([LifeSpan.BRUSH, LifeSpan.FILTER, LifeSpan.SIDE_BRUSH])],
             reset=ResetLifeSpan,
         ),
-        map=CapabilityMap(
-            cached_info=CapabilityEvent(CachedMapInfoEvent, [GetCachedMapInfo()]),
-            changed=CapabilityEvent(MapChangedEvent, []),
-            major=CapabilityEvent(MajorMapEvent, [GetMajorMap()]),
-            multi_state=CapabilitySetEnable(
-                MultimapStateEvent, [GetMultimapState()], SetMultimapState
-            ),
-            position=CapabilityEvent(PositionsEvent, [GetPos()]),
-            relocation=CapabilityExecute(SetRelocationState),
-            rooms=CapabilityEvent(RoomsEvent, [GetCachedMapInfo()]),
-            trace=CapabilityEvent(MapTraceEvent, [GetMapTrace()]),
-        ),
-        network=CapabilityEvent(NetworkInfoEvent, [GetNetInfo()]),
-        play_sound=CapabilityExecute(PlaySound),
+        # map=CapabilityMap(
+        #     cached_info=CapabilityEvent(CachedMapInfoEvent, [GetCachedMapInfo()]),
+        #     changed=CapabilityEvent(MapChangedEvent, []),
+        #     major=CapabilityEvent(MajorMapEvent, [GetMajorMap()]),
+        #     multi_state=CapabilitySetEnable(
+        #         MultimapStateEvent, [GetMultimapState()], SetMultimapState
+        #     ),
+        #     position=CapabilityEvent(PositionsEvent, [GetPos()]),
+        #     relocation=CapabilityExecute(SetRelocationState),
+        #     rooms=CapabilityEvent(RoomsEvent, [GetCachedMapInfo()]),
+        #     trace=CapabilityEvent(MapTraceEvent, [GetMapTrace()]),
+        # ),
+        # network=CapabilityEvent(NetworkInfoEvent, [GetNetInfo()]),
+        # play_sound=CapabilityExecute(PlaySound),
         settings=CapabilitySettings(
-            advanced_mode=CapabilitySetEnable(
-                AdvancedModeEvent, [GetAdvancedMode()], SetAdvancedMode
-            ),
+            # advanced_mode=CapabilitySetEnable(
+            #     AdvancedModeEvent, [GetAdvancedMode()], SetAdvancedMode
+            # ),
             carpet_auto_fan_boost=CapabilitySetEnable(
                 CarpetAutoFanBoostEvent,
                 [GetCarpetAutoFanBoost()],
@@ -183,16 +183,16 @@ DEVICES[short_name(__name__)] = StaticDeviceInfo(
             report=CapabilityEvent(ReportStatsEvent, []),
             total=CapabilityEvent(TotalStatsEvent, [GetTotalStats()]),
         ),
-        water=CapabilitySetTypes(
-            event=WaterInfoEvent,
-            get=[GetWaterInfo()],
-            set=SetWaterInfo,
-            types=(
-                WaterAmount.LOW,
-                WaterAmount.MEDIUM,
-                WaterAmount.HIGH,
-                WaterAmount.ULTRAHIGH,
-            ),
-        ),
+        # water=CapabilitySetTypes(
+        #     event=WaterInfoEvent,
+        #     get=[GetWaterInfo()],
+        #     set=SetWaterInfo,
+        #     types=(
+        #         WaterAmount.LOW,
+        #         WaterAmount.MEDIUM,
+        #         WaterAmount.HIGH,
+        #         WaterAmount.ULTRAHIGH,
+        #     ),
+        # ),
     ),
 )
