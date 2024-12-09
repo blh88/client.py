@@ -42,7 +42,7 @@ from deebot_client.commands.json.error import GetError
 from deebot_client.commands.json.fan_speed import GetFanSpeed, SetFanSpeed
 from deebot_client.commands.json.life_span import GetLifeSpan, ResetLifeSpan
 # from deebot_client.commands.json.map import GetCachedMapInfo, GetMajorMap, GetMapTrace
-# from deebot_client.commands.json.multimap_state import (
+# from deebot_client.commands.json.multimap_state import (vo
 #     GetMultimapState,
 #     SetMultimapState,
 # )
@@ -52,7 +52,7 @@ from deebot_client.commands.json.play_sound import PlaySound
 from deebot_client.commands.json.relocation import SetRelocationState
 from deebot_client.commands.json.stats import GetStats, GetTotalStats
 from deebot_client.commands.json.true_detect import GetTrueDetect, SetTrueDetect
-# from deebot_client.commands.json.volume import GetVolume, SetVolume
+from deebot_client.commands.json.volume import GetVolume, SetVolume
 # from deebot_client.commands.json.water_info import GetWaterInfo, SetWaterInfo
 from deebot_client.commands.json.work_mode import GetWorkMode, SetWorkMode
 from deebot_client.const import DataType
@@ -84,7 +84,7 @@ from deebot_client.events import (
     StatsEvent,
     TotalStatsEvent,
     TrueDetectEvent,
-    # VolumeEvent,
+    VolumeEvent,
     # WaterAmount,
     # WaterInfoEvent,
     WorkMode,
@@ -175,7 +175,7 @@ DEVICES[short_name(__name__)] = StaticDeviceInfo(
             true_detect=CapabilitySetEnable(
                 TrueDetectEvent, [GetTrueDetect()], SetTrueDetect
             ),
-            # volume=CapabilitySet(VolumeEvent, [GetVolume()], SetVolume),
+            volume=CapabilitySet(VolumeEvent, [GetVolume()], SetVolume),
         ),
         state=CapabilityEvent(StateEvent, [GetChargeState(), GetCleanInfo()]),
         stats=CapabilityStats(
